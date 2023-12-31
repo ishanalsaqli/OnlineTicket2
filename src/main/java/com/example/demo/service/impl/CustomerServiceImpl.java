@@ -28,7 +28,7 @@ public class CustomerServiceImpl implements CustomerService {
     public void saveCustomer(Customer customer) throws NoSuchAlgorithmException {
         customerRepository.save(customer);
         emailService.sendmail(customer.getMail(),
-                customer.getFullname() + " ,ugurla qeydiyyatdan kecdiniz", "Qeydiyyat");
+                customer.getFullname() + " ,ugurla qeydiyyatdan kecdin", "Qeydiyyat");
     }
 
     @Override
@@ -43,7 +43,6 @@ public class CustomerServiceImpl implements CustomerService {
 
     public boolean login(String username, String password) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-
         return customerRepository.findByUsername(username)
                 .map(value -> passwordEncoder.matches(password,value.getPassword()))
                 .orElse(false);
