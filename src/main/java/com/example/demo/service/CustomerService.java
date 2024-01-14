@@ -9,7 +9,7 @@ import java.security.NoSuchAlgorithmException;
 public interface CustomerService {
     Customer getCustomer(String fin);
 
-    void saveCustomer(Customer customer) throws NoSuchAlgorithmException;
+    void saveCustomer(Customer customer) ;
 
     void updateCustomer(Long id, Customer customer);
 
