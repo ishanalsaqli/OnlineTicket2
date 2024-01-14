@@ -25,7 +25,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void saveCustomer(Customer customer) throws NoSuchAlgorithmException {
+    public void saveCustomer(Customer customer) {
         customerRepository.save(customer);
         emailService.sendmail(customer.getMail(),
                 customer.getFullname() + " ,ugurla qeydiyyatdan kecdin", "Qeydiyyat");
